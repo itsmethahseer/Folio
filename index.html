@@ -452,11 +452,12 @@ e
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    $("#submit-form").submit((e)=>{
+    $("#formw").submit((e)=>{
+      if(validateall()){
         e.preventDefault()
         $.ajax({
             url:"https://script.google.com/macros/s/AKfycby_ir_X58Bmd5wHKgVW_zDOwA5c9VqoOX1hfsw3aCICNc9jyP-fuG52wa5GZMFoMxjK/exec",
-            data:$("#submit-form").serialize(),
+            data:$("#formw").serialize(),
             method:"post",
             success:function (response){
                 alert("Form submitted successfully")
@@ -468,6 +469,7 @@ e
 
             }
         })
+      }
     })
 </script>
 
